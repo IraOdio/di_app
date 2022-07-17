@@ -7,7 +7,7 @@ use App\Game\Classes\GameObject\IGameObject;
 use App\Game\Classes\GameObject\World\World;
 use App\Game\Classes\Storage\DbStorage;
 
-class DefaultIncubator extends AIncubator  implements IIncubator
+class MainIncubator extends AIncubator  implements IIncubator
 {
     public function iteration()
     {

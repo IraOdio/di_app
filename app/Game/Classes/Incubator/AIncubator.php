@@ -15,11 +15,11 @@ abstract class AIncubator
 
     protected \Psr\Log\LoggerInterface $logger;
 
-    public function __construct(string $name = 'DefaultNammeIncubator',int $iteration = 1000)
+    public function __construct(IncubatorConfig $cfg)
     {
         //$this->listGO = $listGO;
-        $this->iteration = $iteration;
-        $this->name = $name;
+        $this->iteration = $cfg->getIteration();
+        $this->name = $cfg->getName();
         $className = (new \ReflectionClass($this))->getShortName();
         $this->logger = Log::build([
             'driver' => 'daily',

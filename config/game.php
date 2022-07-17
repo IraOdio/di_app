@@ -6,10 +6,12 @@ return [
 
     'incubatorService' => [
         'incubators' => [
-            'defaultIncubator' => [
-                'className' => 'App\\Game\\Classes\\Incubator\\DefaultIncubator',
+            'MainIncubator' => [
+                'className' => 'App\\Game\\Classes\\Incubator\\MainIncubator',
             ]
         ],
+
+        'default_incubator' => 'MainIncubator'
     ],
 
 
