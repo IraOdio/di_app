@@ -16,3 +16,5 @@ yarn-error.log
 Nginx_1.21_vhost.conf
 nginx-conf.txt
 /docker
+docker-compose.yml
+/dev_folder
