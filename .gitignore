@@ -18,4 +18,5 @@ nginx-conf.txt
 /docker
 docker-compose.yml
 /dev_folder
-/laradock
+/laradock/
+/Nginx_1.21_vhost.conf.old
