@@ -10,9 +10,20 @@ return [
                 'className' => 'App\\Game\\Classes\\Incubator\\MainIncubator',
             ]
         ],
-
-        'default_incubator' => 'MainIncubator'
+        'default_incubator' => 'MainIncubator',
     ],
+
+    'storageService' => [
+        'storages'=> [
+            'storage' => [
+                'className' => 'App\\Game\\Classes\\Storage\\Storage'
+            ],
+        ],
+
+        'default_storage' => 'storage'
+    ],
+
+
 
 
 ];

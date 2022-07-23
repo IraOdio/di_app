@@ -6,5 +6,7 @@ use App\Game\Classes\GameObject\GameObjectList;
 
 interface IIncubator
 {
-    public function iteration();
+    public function start();
+
+    public function stop();
 }

@@ -18,3 +18,4 @@ nginx-conf.txt
 /docker
 docker-compose.yml
 /dev_folder
+/laradock

@@ -6,15 +6,20 @@ namespace App\Game\Classes\Incubator;
 
 class ZeroIncubator extends AIncubator implements IIncubator
 {
-    public function iteration()
+    public function start()
     {
-        $c = (new \ReflectionClass($this))->getShortName();
-        $this->logger->info("Iteration",['class'=>"exec class {$c}"]);
+        $name = $this->getIncubatorConfig()->getName();
+        $this->getLogger()->info("Iteration",['desc'=>"name incubator -> {$name}"]);
         // TODO - Манипуляции над игровыми объектами
         foreach ($this->getGameObjectsList() as $key => $item)
         {
 
         }
+    }
+
+    public function stop()
+    {
+
     }
 
     protected function calculationLifeEnv()

@@ -11,6 +11,16 @@ abstract class AWorld extends AGameObject
 
     public function __construct(WorldConfig $cfg)
     {
+        $this->setWorldConfig($cfg);
+    }
+
+    public function setWorldConfig(WorldConfig $cfg)
+    {
         $this->cfg = $cfg;
+    }
+
+    public function getWorldConfig() : WorldConfig
+    {
+        return $this->cfg;
     }
 }

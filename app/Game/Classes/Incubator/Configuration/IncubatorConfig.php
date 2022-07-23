@@ -1,27 +1,22 @@
 <?php
 
 
-namespace App\Game\Classes\Incubator;
+namespace App\Game\Classes\Incubator\Configuration;
 
+
+use App\Game\Classes\Boilerplate\T_GetterSetterName;
 
 class IncubatorConfig
 {
-    protected string $name;
+    use T_GetterSetterName;
 
     protected int $iteration = 1000;
 
     public function __construct()
     {
-    }
-
-    public function setName(string $name)
-    {
-        $this->name = $name;
-    }
-
-    public function getName() : string
-    {
-        return $this->name;
+        // default init
+        $this->setName('name not setted!!!');
+        $this->setIteration(1000);
     }
 
     public function setIteration(int $value)

@@ -3,8 +3,9 @@
 namespace App\Game\Classes\GameObject;
 
 use Illuminate\Support\Facades\Log;
+use Psr\Log\LoggerInterface;
 
-abstract class AGameObject implements IGameObject
+abstract class AGameObject
 {
     protected string $name;
 
@@ -12,26 +13,15 @@ abstract class AGameObject implements IGameObject
 
     protected \Psr\Log\LoggerInterface $logger;
 
-    public function __construct(string $name = 'DefaultNameGOOO', float $ratio = 1.0)
+    abstract public function __construct();
+
+    public function getLogger() : LoggerInterface
     {
-        $this->name = $name;
-        $this->ratio = $ratio;
-
-
         $className = (new \ReflectionClass($this))->getShortName();
-        $this->logger = Log::build([
+        return Log::build([
             'driver' => 'daily',
             'path' => storage_path("logs/{$className}/Generals/general.log"),
-        ]);;
+        ]);
     }
 
-    public function getName() : string
-    {
-        return $this->name;
-    }
-
-    public function lifeCycle()
-    {
-        // TODO: Implement lifeCycle() method.
-    }
 }

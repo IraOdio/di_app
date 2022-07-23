@@ -24,3 +24,7 @@ Route::get('/sprint',[\App\Sprint\Controllers\SprintController::class,'planningS
 Route::get('/product',[\App\Products\Controllers\ProductController::class,'index']);
 
 Route::get('/game',[\App\Game\Controllers\GameController::class,'index']);
+
+Route::get('/phpinfo',function (){
+   echo phpinfo();
+});

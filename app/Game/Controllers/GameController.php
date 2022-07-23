@@ -2,7 +2,7 @@
 
 namespace App\Game\Controllers;
 
-use App\Game\Classes\DI\IncubatorService;
+use App\Game\Classes\Services\IncubatorService;
 
 use App\Game\Classes\MainGame;
 use Illuminate\Routing\Controller as BaseController;

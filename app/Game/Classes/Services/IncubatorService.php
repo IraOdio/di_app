@@ -1,11 +1,11 @@
 <?php
 
 
-namespace App\Game\Classes\DI;
+namespace App\Game\Classes\Services;
 
 
 use App\Game\Classes\Incubator\IIncubator;
-use App\Game\Classes\Incubator\IncubatorConfig;
+use App\Game\Classes\Incubator\Configuration\IncubatorConfig;
 
 class IncubatorService
 {
@@ -14,7 +14,7 @@ class IncubatorService
 
     public function __construct(IncubatorConfig $cfg)
     {
-        $this->cfgIncubator = $cfg;
+       $this->setIncubatorConfig($cfg);
     }
 
     public function getIncubator(string $name = '') : IIncubator
@@ -35,6 +35,11 @@ class IncubatorService
     protected function loadGameConfig()
     {
         return config('game.incubatorService');
+    }
+
+    protected function setIncubatorConfig(IncubatorConfig $cfg)
+    {
+        $this->cfgIncubator = $cfg;
     }
 
     protected function getIncubatorConfig() : IncubatorConfig

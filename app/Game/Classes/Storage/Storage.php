@@ -5,15 +5,14 @@ namespace App\Game\Classes\Storage;
 use App\Game\Classes\GameObject\World\Configuration\WorldConfig;
 use App\Game\Classes\Order\OrderRepository;
 
-class DbStorage extends AStorage
+class Storage extends AStorage implements GameStorage
 {
     public function __construct()
     {
     }
 
-    public function getConfigWorld(int $id = 0) : WorldConfig
+    public function getConfigWorld() : WorldConfig
     {
-        // TODO - Выборка из БД
         // Какие-то прикольные штучки
         $orderRepository = new OrderRepository();
 
